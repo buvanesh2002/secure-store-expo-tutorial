@@ -10,13 +10,13 @@ export default function App() {
   const [value, setValue] = useState();
 
   const saveSecureValue = async () => {
-    await SecureStore.setItemAsync(key, value);
+    await SecureStore.setItemAsync(key, value,{requireAuthentication: true,authenticationPrompt:"Allow $(PRODUCT_NAME) to use Face ID." }); // Biometric Authentication is required to save and fetch the key values
     setKey();
     setValue();
   };
 
   const retrieveSecureValue = async () => {
-    let result = await SecureStore.getItemAsync(key);
+    let result = await SecureStore.getItemAsync(key,);
     setValue(result);
   };
 
