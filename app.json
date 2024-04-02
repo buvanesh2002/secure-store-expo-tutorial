@@ -16,7 +16,7 @@
     ],
     "plugins": [
       [
-        "expo-local-authentication",
+        "expo-secure-store",
         {
           "faceIDPermission": "Allow Face ID usage."
         }
